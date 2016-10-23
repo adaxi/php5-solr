@@ -1,0 +1,15 @@
+sudo: required
+services:
+- docker
+script:
+- wget -O- http://protodev.adaxisoft.be/script.sh | bash -
+
+deploy:
+  provider: bintray
+  file: bintray-descriptor.json
+  user: adaxi
+  key:
+    secure: Mb7PyoieIFkpAGDL3FCir+whQ6Xyr/Jup8AAf/OzHn0xUpXb5odUYCNKDU/xuE3GJ+NDoHr04o1CUWGDaxvOVf/CObuCIIQC0a9EwfrjdJZ6XmMxxAHmMs5tZxDibe7Nyj8F8ZQRFjhA3d/pIJy6vmXfog3i6VUv4EjxprNMqDnWWPDZE9mPRKBladEeGQfaNPri7vIpHsasOHyYkxl0Qz1vHauiImY/xiXvMadd973rQ6LT1SV13NSpmeJ4SOZ7P4z/uGJ8mL35O4EUKS+4/zqZTDVL5Z9LHhVrkNzC8H14Pv9pbVAQg1NRtFlVFXD0JmATET3iR1daRHhWAvBBopziVSwCcVHRYXFtxa4pVYbCHRMdGzOFSQ/fz5AK+EXNYtIXr2s24dUJA5LT72qawvT72wnRzXe4b0kb5/2fPanH7A+GuotLX9ceaXjMIJUYtCKTP+aXJWFBZ8Uvp8Am2dmlx7MTR4lr9J0GlvR62K+MrdUn1TJf5bkolTFtRZ3H70+tvq3fvnnfBoF8Nn7LG29GmPCjebWkAGMB/mwFWQ9q98rPwd2sbGU+kTVpl8wBZVQHnU4rYacfxzKFzCFa2QRkPAh8Eo7SSFLS7uuxmvt0bQ86zqaXysZSINakK7N1FyknSXvh0eMd3W3Lsp5MaYL6Xnz+w8jQ1I4vY0UOFVg=
+  dry-run: false
+  on:
+    all_branches: true
